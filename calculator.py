@@ -15,9 +15,26 @@ def divide(a, b):
     return a / b
 
 if __name__ == "__main__":
-    print("Calculator v3 - 4 operations")
+    print("=== My Calculator ===")
     print("2 + 3 =", add(2, 3))
     print("5 - 2 =", subtract(5, 2))
     print("4 * 3 =", multiply(4, 3))
     print("10 / 2 =", divide(10, 2))
-    print("10 / 0 =", divide(10, 0))
+
+    # interactive part
+    try:
+        x = float(input("Enter first number: "))
+        op = input("Enter operation (+ - * /): ")
+        y = float(input("Enter second number: "))
+        if op == "+":
+            print("Result:", add(x, y))
+        elif op == "-":
+            print("Result:", subtract(x, y))
+        elif op == "*":
+            print("Result:", multiply(x, y))
+        elif op == "/":
+            print("Result:", divide(x, y))
+        else:
+            print("Unknown operation!")
+    except ValueError:
+        print("Please enter valid numbers!")
